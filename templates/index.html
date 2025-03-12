@@ -9,12 +9,10 @@
         /* Estilo para centrar el contenido en la pantalla */
         body {
             font-family: 'Arial', sans-serif;
-            /* background-color: rgb(228, 228, 228); */
             background-image: url('https://blog.dataprius.com/wp-content/uploads/2018/01/concepto-organizar-carpetas-archivos.jpg');
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
-            /* Centra la imagen en la pantalla */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -71,9 +69,10 @@
 <body>
     <div class="container">
         <h1>Subir .xlsx o .csv para formatear asistencias del ivms,</h1>
-        <h1>no usar para nada mas.</h1>
+        <h1>no usar para nada más.</h1>
         <form action="/procesar" method="post" enctype="multipart/form-data">
-            <input type="file" name="file" accept=".xlsx" required>
+            <!-- Cambia el input para permitir múltiples archivos -->
+            <input type="file" name="files" multiple accept=".xlsx, .csv" required>
             <br>
             <input type="submit" value="Subir y procesar">
         </form>
