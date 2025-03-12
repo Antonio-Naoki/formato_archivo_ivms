@@ -13,26 +13,26 @@ app = Flask(__name__)
 # Función para aplicar estilos a la tabla
 def aplicar_estilos(ws):
     # Estilo para los encabezados
-    header_fill = PatternFill(start_color="00FF00", end_color="00FF00", fill_type="solid")  # Fondo verde
-    header_font = Font(name="Arial", size=12, bold=True, color="000000")  # Fuente en negrita y negra
+    header_fill = PatternFill(start_color="3CB371", end_color="3CB371", fill_type="solid") 
+    header_font = Font(name="Arial", size=12, bold=True, color="FFFFFF")
     header_border = Border(
         left=Side(style="thin"),
         right=Side(style="thin"),
         top=Side(style="thin"),
         bottom=Side(style="thin")
     )
-    header_alignment = Alignment(horizontal="center", vertical="center")  # Texto centrado
+    header_alignment = Alignment(horizontal="center", vertical="center")
 
     # Estilo para las celdas de datos
-    data_fill = PatternFill(start_color="FFFFFF", end_color="FFFFFF", fill_type="solid")  # Fondo blanco
-    data_font = Font(name="Arial", size=11, color="000000")  # Fuente normal
+    data_fill = PatternFill(start_color="FFFFFF", end_color="FFFFFF", fill_type="solid")
+    data_font = Font(name="Arial", size=11, color="000000")
     data_border = Border(
         left=Side(style="thin"),
         right=Side(style="thin"),
         top=Side(style="thin"),
         bottom=Side(style="thin")
     )
-    data_alignment = Alignment(horizontal="center", vertical="center")  # Texto centrado
+    data_alignment = Alignment(horizontal="center", vertical="center")
 
     # Aplicar estilos a los encabezados
     for cell in ws[1]:
@@ -52,7 +52,7 @@ def aplicar_estilos(ws):
     # Ajustar el ancho de las columnas
     for col in ws.columns:
         max_length = 0
-        column = col[0].column_letter  # Obtener la letra de la columna
+        column = col[0].column_letter
         for cell in col:
             try:
                 if len(str(cell.value)) > max_length:
@@ -72,6 +72,7 @@ def procesar_archivo(df, nombre_archivo):
     df = df.rename(columns={
         "Person ID": "ID Persona",
         "Name": "Nombre",
+        "Department": "Departmento",
         "Time": "Hora",
         "Attendance Status": "Estado de Asistencia",
         "Custom Name": "Tipo de Evento"
