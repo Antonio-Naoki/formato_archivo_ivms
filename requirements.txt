@@ -1,7 +1,8 @@
 Flask==2.2.3
 flask-login==0.6.2
 pyrebase4==5.0.0
-pandas==1.5.3
 requests==2.32.3
 requests-html==0.10.0
+pandas==2.0.3
+openpyxl==3.1.2
 
